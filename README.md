@@ -1,3 +1,5 @@
+# 📈 quant-pricing-lib
+
 A Python library for pricing vanilla financial products, built from scratch as a learning project in quantitative finance.
 
 ## What this project does
@@ -16,26 +18,30 @@ Each product is implemented as a Python class with clearly documented methods. J
 ## Project structure
 
 ```
-pyfinance-pricer/
+quant-pricing-lib/
 │
-├── pyfinance/                  ← main package
+├── quant_pricing_lib/              ← main package (note: underscores, not dashes)
+│   ├── __init__.py
 │   ├── options/
-│   │   ├── black_scholes.py    ← Black-Scholes model for European options
-│   │   ├── binomial.py         ← CRR binomial tree (European & American)
-│   │   └── greeks.py           ← Delta, Gamma, Vega, Theta, Rho
+│   │   ├── __init__.py
+│   │   ├── black_scholes.py        ← Black-Scholes model for European options
+│   │   ├── binomial.py             ← CRR binomial tree (European & American)
+│   │   └── greeks.py               ← Delta, Gamma, Vega, Theta, Rho
 │   ├── bonds/
-│   │   ├── zero_coupon.py      ← Zero-coupon bond pricing
-│   │   └── coupon_bond.py      ← Coupon bond: price, YTM, duration, convexity
+│   │   ├── __init__.py
+│   │   ├── zero_coupon.py          ← Zero-coupon bond pricing
+│   │   └── coupon_bond.py          ← Coupon bond: price, YTM, duration, convexity
 │   └── utils/
-│       └── stats.py            ← Shared statistical helpers
+│       ├── __init__.py
+│       └── stats.py                ← Shared statistical helpers
 │
 ├── notebooks/
-│   ├── 01_black_scholes.ipynb  ← Black-Scholes demo and visualizations
-│   ├── 02_greeks.ipynb         ← Greeks profiles across spot prices
-│   └── 03_bonds.ipynb          ← Bond pricing and yield curves
+│   ├── 01_black_scholes.ipynb      ← Black-Scholes demo and visualizations
+│   ├── 02_greeks.ipynb             ← Greeks profiles across spot prices
+│   └── 03_bonds.ipynb              ← Bond pricing and yield curves
 │
 ├── tests/
-│   └── test_black_scholes.py   ← Unit tests with pytest
+│   └── test_black_scholes.py       ← Unit tests with pytest
 │
 ├── requirements.txt
 └── README.md
@@ -48,8 +54,8 @@ pyfinance-pricer/
 **Clone the repository:**
 
 ```bash
-git clone https://github.com/YOURUSERNAME/pyfinance-pricer.git
-cd pyfinance-pricer
+git clone https://github.com/YOURUSERNAME/quant-pricing-lib.git
+cd quant-pricing-lib
 ```
 
 **Install dependencies:**
@@ -65,7 +71,7 @@ Dependencies used: `numpy`, `pandas`, `scipy`, `matplotlib`
 ## Quick start
 
 ```python
-from pyfinance.options.black_scholes import BlackScholesModel
+from quant_pricing_lib.options.black_scholes import BlackScholesModel
 
 # Define an option
 option = BlackScholesModel(S=100, K=105, T=1, r=0.05, sigma=0.2)
@@ -76,7 +82,7 @@ print(option.price_put())    # European put price
 ```
 
 ```python
-from pyfinance.bonds.coupon_bond import CouponBond
+from quant_pricing_lib.bonds.coupon_bond import CouponBond
 
 # Define a bond
 bond = CouponBond(face=1000, coupon_rate=0.05, maturity=5, r=0.04)
