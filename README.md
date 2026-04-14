@@ -54,7 +54,7 @@ quant-pricing-lib/
 **Clone the repository:**
 
 ```bash
-git clone https://github.com/YOURUSERNAME/quant-pricing-lib.git
+git clone https://github.com/sebastianramos7/quant-pricing-lib.git
 cd quant-pricing-lib
 ```
 
